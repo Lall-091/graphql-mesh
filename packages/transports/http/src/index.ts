@@ -93,4 +93,4 @@ export default {
 
     return httpExecutor;
   },
-} satisfies Transport;
+} satisfies Transport<HTTPTransportOptions>;

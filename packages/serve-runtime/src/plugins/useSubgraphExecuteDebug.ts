@@ -23,8 +23,8 @@ export function useSubgraphExecuteDebug<TContext>(opts: {
       return function onSubgraphExecuteDone({ result }) {
         if (isAsyncIterable(result)) {
           return {
-            onNext(value) {
-              logger.debug(`subgraph-response-next`, value);
+            onNext({ result }) {
+              logger.debug(`subgraph-response-next`, result);
             },
             onEnd() {
               logger.debug(`subgraph-response-end`);
